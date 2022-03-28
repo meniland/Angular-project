@@ -71,3 +71,5 @@ export class StartComponent implements OnInit {
 
   }
 }
+
+
