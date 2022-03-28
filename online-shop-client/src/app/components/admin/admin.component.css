@@ -1,0 +1,13 @@
+.admin-card{
+  width: 200px;
+  margin: 20px;
+  display: inline-block;
+}
+
+input{
+  margin-top: 18px;
+}
+
+.add-button{
+  margin-top: 20px;
+}

@@ -1,0 +1,25 @@
+/* body{
+  text-align: center;
+} */
+button{
+  margin: 15px;
+}
+
+.container{
+  position: relative;
+  margin-top: 69px;
+}
+
+.shop-button{
+  position: absolute;
+  top: 231px;
+  right: 200px;
+}
+
+.massage-div{
+  position: absolute;
+  top: 195px;
+  right: 123px;
+  font-size: large;
+  width: 293px;
+}

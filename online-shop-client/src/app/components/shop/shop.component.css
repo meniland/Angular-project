@@ -1,0 +1,33 @@
+.sidenav {
+  width: 200px;
+}
+
+.sidenav-content {
+  background-color: #dce8e9;
+}
+
+.container {
+  text-align: center;
+}
+
+.cart-button {
+  position: fixed;
+  top: 80px;
+  display: inherit;
+}
+
+.categoty-button {
+  margin: 10px;
+  border: none;
+  background-color: #dce8e9;
+}
+
+.categoty-button:focus {
+  font-size: 20px;
+}
+
+.category-buttons-div {
+  margin-top: 69px;
+  display: inline-block;
+  margin-right: 100px;
+}

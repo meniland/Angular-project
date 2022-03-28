@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Fill in product details</h1>
+<div mat-dialog-content>
+  <p>Product name:</p>
+  <input type="text" [(ngModel)]="product.productname"><br><br>
+  <p>Price:</p>
+  <input type="number" [(ngModel)]="product.price"><br><br>
+  <p>Image:</p>
+  <input class="fileInput" type="file" (change)="saveFile($event)"><br><br>
+  <p>Category number:</p>
+  <input type="number" [(ngModel)]="product.categoryId">
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" mat-dialog-close (click)="onButtonClick()">Add</button>
+</div>

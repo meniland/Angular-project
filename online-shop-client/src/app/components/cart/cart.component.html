@@ -1,0 +1,13 @@
+<button mat-raised-button color="warn" class="delete-button" [disabled]="productArray.length == 0" (click)="onDeleteCartClick()">Delete cart</button>
+
+<div *ngFor="let product of productArray" class="product">
+  <img src={{product.image}}><br>
+  <button mat-icon-button (click)="onDeleteButtonClick(product.id)"><mat-icon class="clear-icon">clear</mat-icon></button><br>
+  <span class="productName">{{product.productname}}</span><br>
+  <span>quantity: {{product.amount}}</span><br>
+  <span>Price: {{product.price | currency}}</span>
+</div>
+
+<span class="price">Total price: {{totalPrice | currency}} </span>
+<button class="order-button" [disabled]="productArray.length == 0" (click)="onOrderClick()" routerLink="/order">To order</button>
+

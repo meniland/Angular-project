@@ -1,0 +1,15 @@
+<div>
+  <input placeholder="search" [(ngModel)]="searchValue">
+</div><br>
+<div>
+  <button class="add-button" mat-raised-button color="primary" (click)="onAddProductClick()">Add ptoduct</button>
+</div><br>
+<mat-card class="admin-card" *ngFor="let product of allProductsArray| productSearch: searchValue">
+  <img mat-card-image [src]="product.image">
+  <mat-card-content>
+    <p>{{product.productname}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-icon-button  (click)="onEditClick(product)"><mat-icon>edit</mat-icon></button>
+  </mat-card-actions>
+</mat-card>

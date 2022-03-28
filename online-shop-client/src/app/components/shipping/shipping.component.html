@@ -1,0 +1,66 @@
+<div>
+  <span>Fill in the details for shipping</span><br><br>
+  <form #formInfo="ngForm" [formGroup]="shippingFormGroup">
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>City</mat-label>
+      <input type="text" matInput [formControl]="cityFormControl" [errorStateMatcher]="matcher">
+
+      <mat-error *ngIf="cityFormControl.hasError('required')">
+        City is <strong>required</strong>
+      </mat-error>
+    </mat-form-field><br><br>
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Street</mat-label>
+      <input type="text" matInput [formControl]="streetFormControl" [errorStateMatcher]="matcher">
+
+      <mat-error *ngIf="streetFormControl.hasError('required')">
+        Street is <strong>required</strong>
+      </mat-error>
+    </mat-form-field><br><br>
+
+    <mat-form-field appearance="fill" class="dateInput">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" [formControl]="dateFormControl" [errorStateMatcher]="matcher">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+
+      <mat-error *ngIf="dateFormControl.hasError('required')">
+        Shipping date is <strong>required</strong>
+      </mat-error>
+    </mat-form-field><br><br>
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Credit number</mat-label>
+      <input type="number" matInput [formControl]="creditNumberFormControl" [errorStateMatcher]="matcher">
+
+      <mat-error *ngIf="creditNumberFormControl.hasError('required')">
+        Credit number is <strong>required</strong>
+      </mat-error>
+    </mat-form-field><br><br>
+<!--
+    <input #cityInput="ngModel" type="text" placeholder="city" [(ngModel)]="city" (dblclick)="onCityInputDblClicked()"
+      name="city" required><br><br>
+    <span *ngIf="cityInput.errors?.['required'] && cityInput.touched">City required</span><br><br>
+
+    <input #streetInput="ngModel" type="text" placeholder="street" [(ngModel)]="street"
+      (dblclick)="onStreetInputDblClicked()" name="street" required><br><br>
+    <span *ngIf="streetInput.errors?.['required'] && streetInput.touched">Street required</span><br><br>
+
+    <input #dateInput="ngModel" [ngModel]="shippingDate" (change)="onDateSelected(dateInput.value)" type="date"
+      name="date" required><br><br>
+    <span *ngIf="dateInput.errors?.['required'] && dateInput.touched">Date required</span><br><br>
+
+    <input #creditNumberInput="ngModel" type="number" placeholder="credit number" [(ngModel)]="creditNumber"
+      name="creditNumber" required><br><br>
+    <span *ngIf="creditNumberInput.errors?.['required'] && creditNumberInput.touched">Credit number
+      required</span><br><br> -->
+
+    <button mat-raised-button [disabled]="formInfo.form.invalid" (click)="onOrderClick()">Order</button>
+  </form>
+
+
+</div>

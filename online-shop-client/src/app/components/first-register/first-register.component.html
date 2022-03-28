@@ -1,0 +1,50 @@
+<form #formInfo="ngForm" [formGroup]="registerFormGroup">
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Id number</mat-label>
+    <input type="number" matInput [formControl]="idFormControl" [errorStateMatcher]="matcher" (input)="onIdChange($event)">
+    <mat-error *ngIf="idFormControl.hasError('required')">
+      Id is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="idFormControl.hasError('idAlraedyExsist')">
+      Id is <strong>already exists</strong>
+    </mat-error>
+  </mat-form-field><br><br>
+  <!-- <span *ngIf="confirmPasswordError">{{confirmPasswordError}}</span><br><br> -->
+
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+      placeholder="Ex. pat@example.com" >
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field><br><br>
+
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Password</mat-label>
+    <input type="password" matInput [formControl]="passwordFormControl" [errorStateMatcher]="matcher">
+    <mat-error *ngIf="passwordFormControl.hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+  </mat-form-field><br><br>
+
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Confirm password</mat-label>
+    <input type="password" matInput [formControl]="confirmPasswordFormControl" [errorStateMatcher]="matcher">
+    <mat-error *ngIf="confirmPasswordFormControl.hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="confirmPasswordFormControl.hasError('passwordDontValide')">
+      {{confirmPasswordFormControl.errors?.['passwordDontValide'].error}}
+    </mat-error>
+  </mat-form-field><br><br>
+
+  <button [disabled]="formInfo.form.invalid || idAlreadyExsit == true" (click)="onClick()" mat-raised-button>Next</button>
+</form>

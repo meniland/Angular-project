@@ -1,0 +1,29 @@
+<!-- <div class="product">
+  <img src={{product.image}}><br>
+  <span>{{product.productname}}</span>
+  <button (click)="onLessButtonClick()">-</button>
+  {{amount}}
+  <button (click)="onPlusButtonClick()">+</button><br>
+  <span>{{product.price}}</span>
+  <button [disabled]="amount == 0" (click)="onBuyButtonClick()">buy</button>
+</div> -->
+
+<mat-card class="admin-card">
+  <img mat-card-image [src]="product.image">
+  <mat-card-content>
+    <span>{{product.productname}}</span>
+    <span>{{product.price | currency}}</span>
+
+    <!-- <mat-card-actions> -->
+    <div>
+      <button mat-icon-button (click)="onLessButtonClick()" style="color: red; font-size: 20px;">-</button>
+      {{amount}}
+      <button mat-icon-button (click)="onPlusButtonClick()" style="color: green; font-size: 20px;">+</button><br>
+      <button mat-icon-button color="primary" [disabled]="amount <= 0" (click)="onBuyButtonClick()">
+        <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+    </div>
+
+    <!-- </mat-card-actions> -->
+  </mat-card-content>
+</mat-card>

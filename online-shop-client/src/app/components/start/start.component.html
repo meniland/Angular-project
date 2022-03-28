@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="buttons-div">
+    <button (click)="changeToRegisterComponents()" mat-raised-button>Register</button>
+    <button (click)="changeToLoginComponents()" mat-raised-button>Login</button>
+  </div>
+  <app-login *ngIf="componentToShow == 'login'" (loginEvent)="onLoginClick($event)"></app-login>
+  <app-first-register *ngIf="componentToShow == 'first-register-part'"
+    (registerEvent)="changeToSecoundRegisterComponent($event)"></app-first-register>
+  <app-secound-register *ngIf="componentToShow == 'secound-register-part'"></app-secound-register>
+
+  <div class="massage-div" [innerHTML]="htmlString"></div>
+  <button class="shop-button" *ngIf="isShowShoppingButton" routerLink="/shop" mat-raised-button>Happy shopping</button>
+</div>

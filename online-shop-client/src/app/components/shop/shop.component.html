@@ -1,0 +1,50 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" [fixedInViewport]="true" [fixedTopGap]="72" class="sidenav">
+
+    <app-cart></app-cart>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="sidenav-content">
+    <button mat-butt mat-icon-button (click)="sidenav.toggle()" class="cart-button"  matTooltip="show/hide the cart">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+
+    <div class="category-buttons-div">
+      <button class="categoty-button" *ngFor="let category of categories" (click)="onClick(category.id)">{{category.name}}</button>
+    </div>
+
+    <input placeholder="search" (input)="onSearchInputChange()" [(ngModel)]="searchValue">
+
+
+    <div *ngIf="productsToShow == 'byCategory'" class="container">
+      <app-card *ngFor="let product of productArrayByCategory" [product]="product"></app-card>
+
+    </div>
+
+    <div *ngIf="productsToShow == 'allProducts'" class="container">
+      <app-card *ngFor="let product of allProductsArray| productSearch: searchValue" [product]="product"></app-card>
+    </div>
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+<!-- <app-cart></app-cart>
+
+  <input placeholder="search" (input)="onSearchInputChange()" [(ngModel)]="searchValue">
+
+<div>
+  <button *ngFor="let category of categories" (click)="onClick(category.id)">{{category.name}}</button>
+</div>
+
+<div *ngIf="productsToShow == 'byCategory'" class="container">
+  <app-card  *ngFor="let product of productArrayByCategory" [product]="product" ></app-card>
+
+</div>
+
+<div *ngIf="productsToShow == 'allProducts'" class="container">
+  <app-card  *ngFor="let product of allProductsArray| productSearch: searchValue" [product]="product"></app-card>
+</div> -->

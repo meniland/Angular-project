@@ -1,0 +1,21 @@
+<section>
+  <header>
+    <br>
+    <span class="logo">
+      Online-shop
+    </span>
+    <div class="log-out-container">
+      <button *ngIf="isUserLoggedIn" (click)="onLogoutClick()" class="log-out" mat-raised-button>Log out</button>
+    </div>
+  </header>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- <footer>
+    <div class="footer-text">
+    All rights reserved
+  </div>
+  </footer> -->
+</section>
